@@ -37,7 +37,7 @@ body::before {
     radial-gradient(ellipse 55% 50% at 90% 80%, rgba(76,201,240,0.11) 0%, transparent 55%),
     radial-gradient(ellipse 65% 45% at 5%  90%, rgba(168,85,247,0.09) 0%, transparent 55%),
     radial-gradient(ellipse 50% 40% at 50% 50%, rgba(6,214,160,0.06)  0%, transparent 60%);
-  pointer-events: none; z-index: 0;
+  pointer-events: none; z-index: 0; inset: 0; position: fixed;
 }
 
 /* ── HEADER ── */
@@ -103,13 +103,15 @@ header {
 
 /* ── NAV ── */
 nav {
-  position: sticky; top: 0; z-index: 20;
-  background: rgba(7,6,15,0.82); backdrop-filter: blur(20px);
+  position: sticky; top: 0; z-index: 9999;
+  background: rgba(7,6,15,0.92); backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
+  pointer-events: all;
 }
 .nav-inner {
   max-width: 1160px; margin: 0 auto; padding: 0 5%;
   display: flex; gap: 0;
+  position: relative; z-index: 9999;
 }
 .tab-btn {
   position: relative; background: none; border: none;
@@ -117,6 +119,7 @@ nav {
   letter-spacing: 0.04em; padding: 18px 22px; cursor: pointer;
   transition: color 0.2s; white-space: nowrap;
   display: flex; align-items: center; gap: 8px;
+  pointer-events: all; z-index: 9999;
 }
 .tb-bar {
   position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
