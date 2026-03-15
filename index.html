@@ -457,7 +457,19 @@ footer span {
   <span>Adi Madan</span> &nbsp;·&nbsp; Mountain View, CA &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="076a6663666966636e3734373247606a666e6b2964686a">[email&#160;protected]</a> &nbsp;·&nbsp; © 2026
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function switchTab(name, btn) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classL
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+  document.querySelectorAll('#tab-' + name + ' .card:not(.coming)').forEach((c, i) => {
+    c.style.animation = 'none';
+    void c.offsetHeight;
+    c.style.animation = '';
+    c.style.animationDelay = (i * 0.08) + 's';
+  });
+}
+</script>
+</body>
+</html>
